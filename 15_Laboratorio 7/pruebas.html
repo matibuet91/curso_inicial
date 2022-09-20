@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Documento de pruebas</title>
+</head>
+<body>
+    <!-- <div>Elemento 1</div>
+    <div>Elemento 2</div>
+    <div>Elemento 3</div>
+    <span> Span1</span>
+    <span style="visibility: hidden;" > Span2</span>
+    <span> Span3</span> <br><br>
+
+    <div class="relative">
+        Este div tiene una posicion relativa
+    </div>
+
+    <div class="relative2">
+        Este div tiene una posicion relativa 2
+    </div> -->
+    <!-- <h1>
+        Titulo principal
+    </h1>
+    <h2>Titulo secundario</h2>
+    <div class="pegado">
+        Estoy pegado
+    </div>
+    <p style="padding-bottom: 800px;">
+        ESTE ES UN PARRAFO DE EJEMPLO
+    </p> -->
+
+    <!-- <div class="relative3"> Este elemento tiene posicion realtiva;
+        <div class="absoluta">
+            Este elemento tiene posicion absoluta;
+        </div>
+        <div class="fija">
+            Este elemento tiene posicion fija;
+        </div>
+    </div>
+    <div class="absoluta">
+        Este elemento tiene posicion absoluta;
+    </div> -->
+
+    <!-- <ul>
+        <li>Item 1</li>
+        <li>Item 2</li>
+        <li>Item 3</li>
+    </ul>
+    
+    <button style="float: right;">Flotante</button> -->
+<!-- 
+    <div class="container"> 
+        <div class="item item-1">1</div> 
+        <div class="item item-2">2</div>
+        <div class="item item-3">3</div>
+    </div> -->
+
+    <h1 class="sombras">Texto de pruebas</h1>
+    
+    <div >
+        <input class="element" type="text" name="name" id="name">
+        <label for="test">my check</label>
+        <input type="checkbox" class="prueba" name="test" id="algo">
+        <span>Texto</span>
+    </div> <br>
+    <div class="sombra-interna">
+        <h1> Sombra con inset</h1>
+    </div>
+
+    <br>
+    <div class="sombra-interna-multiple">
+        <h1> Sombra con inset multiple</h1>
+    </div>
+    <br><br><br>
+
+    <a href="http://www.charlesbabbage.edu.ar" target="_blank" >Charles Babbage</a>
+
+    <button class="button-colors">pruebas con pseudoclases</button>
+</body>
+</html>
+<style>
+    .prueba:checked + span{
+        color: blue;
+    }
+    .button-colors{
+        background-color: green;
+    }
+    .button-colors:hover{
+        background-color: orange;
+    }
+    .button-colors:active{
+        background-color: purple;
+    }
+    a:link {
+        color: green;
+        font-weight: bold
+    }
+    a:visited {
+        color: purple;
+        font-weight: bold
+    }
+    a:hover {
+        color: black;
+        font-weight: bold
+    }
+    a:active {
+        color: yellow;
+        font-weight: bold
+    }
+    .sombras{
+        text-shadow: 8px 5px 8px grey;
+    }
+    .sombras-multiples{
+        text-shadow:-1px -1px 3px #999, 
+        0 0 1px darkred, 
+        1px 1px 1px red, 
+        2px 2px 1px #555, 
+        3px 3px 1px #222, 
+        4px 4px 1px #000
+    }
+    .element {
+        box-shadow: 2px 2px 2px 2px grey;
+    }
+    .element:focus {
+        border: 2px dotted #444
+    }
+    .sombra-interna{
+        border: 2px;
+         border-radius: 2%;  
+        /* border-bottom-left-radius: 10px;
+        border-bottom-right-radius: 10px; */
+        text-align: center;
+        padding:10px; 
+        box-shadow: inset 2px 2px 5px 3px grey;
+    }
+
+    .sombra-interna-multiple{
+        text-align: center;
+        padding:10px; 
+        box-shadow:   5px 5px 10px black,
+        10px 10px 10px red,
+        20px 20px 10px blue,
+        10px 10px 10px rgb(0,0,0, 0.5) inset;
+    }
+
+    .container {
+        display: flex;
+        flex-wrap: nowrap;  
+        background: steelblue;
+        width: 200px;
+    }
+
+    .item {
+        background: grey;
+        width: 50%;
+    }
+
+
+    ul {
+        background: grey;
+    }
+
+    li {
+        background: blue;
+        width: 100px;
+        padding: 8px;
+        margin: 8px;
+        color: white;
+    }
+
+    ul, li {
+        float: right;
+    }
+
+
+    /* div {
+        width: 400px;
+        background: steelblue;
+        color: white;
+    }
+    span {
+        display: inline-block;
+        width: 150px;
+        background: steelblue;
+        color: white;
+    }
+    .relative{
+        position: relative;
+        left: 100px;
+        top: 50px;
+        border: 3px solid red;
+    }
+    .relative2{
+        position: relative;
+        right: 100px;
+        bottom: 50px;
+        border: 3px solid red;
+    } */
+
+    .relative3{
+        position: relative;
+        left: 100px;
+        width: 400px;
+        height: 800px;
+        border: 5px solid red;
+    }
+    .absoluta{
+        position: absolute;
+        top: 500px;
+        right: 0px;
+        width: 300px;
+        height: 100px;
+        border: 5px solid red;
+    }
+    .fija{
+        position: fixed;
+        border: 5px solid red;
+        top:0;
+        right:50%;
+    }
+    .pegado{
+        position: -webkit-sticky;
+        position: sticky;
+        top: 0;
+        border: 2px solid red;
+    }
+</style>
+    

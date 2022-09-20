@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="estilos.css">
 </head>
 <body>
+    
     <nav>
         <img class="img-logos"  src="imagenes/logo.jpg" alt="logo"> 
         <a href="index.html">Inicio</a>   
@@ -18,8 +19,10 @@
     </nav>
     <hr>
     <main>
-        <div>
-            <h1>Sabías quien soy? <br>  Te cuento un poco... </h1>
+        <div class="background">
+            <div class="transp" >
+                <h1>Sabías quien soy? <br>  Te cuento un poco... </h1>
+            </div>
         </div>
         <div>
             <iframe 
@@ -48,8 +51,36 @@
                     <td>Email</td>
                     <td>mailto@gmail.com</td>
                 </tr>
-            </table>     
+            </table>
+            <span>Prueba de collapse</span>
         </div>
     </main>
 </body>
 </html>
+<style>
+    /* body{
+        background-image: url("imagenes/productos/1.jpg");
+    } */
+    /* table{
+        visibility: collapse;
+    } */
+    div {
+        margin: 2px;
+    }
+    .background{
+        background-image: url("imagenes/productos/1.jpg");
+        border: 2px solid black;
+    }
+    .transp{
+        margin: 30px;
+        background-color: #fff;
+        border: 1px solid black;
+        opacity: 0.6;
+    }
+    h1{
+        font-weight: bold;
+        color: black;
+        margin:  5px;
+    }
+
+</style>

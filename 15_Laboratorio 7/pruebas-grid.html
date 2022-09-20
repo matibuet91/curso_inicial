@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="grid"> <!-- contenedor -->
+        <div class="a"> <h1>Mi titulo principal</h1> Item 1</div> <!-- cada uno de los ítems del grid -->
+        <div class="b">Item 2</div>
+        <div class="c">Item 3</div>
+        <div class="d">Item 4</div>
+        <div class="e">Item 5</div>
+        <div class="f">Item 6</div>
+    </div>      
+</body>
+</html>
+<style>
+    .grid{
+        background-color: gray;
+        display: grid;
+        grid-template-columns: 20% 20% 20% 20% 20%;
+        grid-template-rows: 20% 20% 20% 20% 20%;
+
+        grid-template: repeat(5,20%) / repeat(5,20%);
+        height: 800px;
+    }
+    .a {
+        background-color: green;
+
+    }
+    .b{
+        background-color: blue;
+    }
+    .c{
+        background-color: yellow;
+    }
+    .d{
+        background-color: red;
+    }
+    .e{
+        background-color: rgb(233, 115, 115);
+    }
+    .f{
+        background-color: rgb(38, 143, 241);
+    }
+
+    
+</style>
