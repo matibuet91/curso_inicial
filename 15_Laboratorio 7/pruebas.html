@@ -4,6 +4,25 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Archivos JS -->
+    <script src="./apps-js/jquery-3.6.1.min.js"></script>
+    <script src="./POO.js"></script>
+    <script src="./storage.js"></script>
+    <script src="./librerias/sweetAlert/sweetalert.min.js" ></script>
+    <script src="./librerias/bootstrap-5.0.2-dist/js/bootstrap.min.js"></script>
+    <script src="./librerias/toats_v2/jquery.toast.min.js"></script>
+    <script type="text/javascript" src="https://cdn.datatables.net/v/dt/dt-1.12.1/datatables.min.js"></script>
+    <!-- Archivos JS -->
+
+    <!-- Archivos de estilos -->
+    <link rel="stylesheet" href="./librerias/bootstrap-5.0.2-dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./librerias/toats_v2/jquery.toast.min.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.12.1/css/jquery.dataTables.css ">
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/dt/dt-1.12.1/datatables.min.css"/> 
+
+    <!-- Archivos de estilos -->
+
     <title>Documento de pruebas</title>
 </head>
 <body>
@@ -58,7 +77,9 @@
         <div class="item item-3">3</div>
     </div> -->
 
-    <h1 class="sombras">Texto de pruebas</h1>
+    <!-- <h1 class="sombras">Texto de pruebas</h1>
+
+    <button onclick="pruebaCarga()">Probar Carga</button>
     
     <div >
         <input class="element" type="text" name="name" id="name">
@@ -79,9 +100,85 @@
     <a href="http://www.charlesbabbage.edu.ar" target="_blank" >Charles Babbage</a>
 
     <button class="button-colors">pruebas con pseudoclases</button>
+
+    <div>
+        <label for="">Disabled</label>
+        <input type="text" disabled>
+        <label for="">Enabled</label>
+        <input type="text" >
+    </div>
+
+    <!-- Button trigger modal -->
+    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+        Launch demo modal
+    </button>
+
+
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <table class="table table-dark table-hover table-striped table-bordered">
+                        <thead>
+                          <tr>
+                            <th scope="col">#</th>
+                            <th scope="col">First</th>
+                            <th scope="col">Last</th>
+                            <th scope="col">Handle</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <th scope="row">1</th>
+                            <td>Mark</td>
+                            <td>Otto</td>
+                            <td>@mdo</td>
+                          </tr>
+                          <tr>
+                            <th scope="row">2</th>
+                            <td>Jacob</td>
+                            <td>Thornton</td>
+                            <td>@fat</td>
+                          </tr>
+                          <tr>
+                            <th scope="row">3</th>
+                            <td colspan="2">Larry the Bird</td>
+                            <td>@twitter</td>
+                          </tr>
+                        </tbody>
+                      </table>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Save changes</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    
+    <table id="tblExample" class="display" style="width:80%">
+    </table>
 </body>
 </html>
 <style>
+
+    /* Muestra en fondo blanco las casillas que permiten escribir */
+    input:enabled {
+    background-color: blueviolet;
+    }
+
+    /* Muestra en fondo gris las casillas que no permiten escribir */
+    input:disabled {
+    background-color: grey;
+    }
+
+
     .prueba:checked + span{
         color: blue;
     }

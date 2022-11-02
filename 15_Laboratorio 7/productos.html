@@ -8,6 +8,8 @@
 	<!-- desde mi pc -->
 	<script src="./apps-js/jquery-3.6.1.min.js"></script>
 	<script src="apps-js/moment.min.js" ></script>
+	<script src="./librerias/jquery-toast/jquery.toast.min.js"></script>
+	<link rel="stylesheet" href="./librerias/jquery-toast/jquery.toast.min.css">
 	<!-- desde internet -->
 	<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/elevator.js/1.0.0/elevator.min.js" integrity="sha512-ELEM91Vwd3E6fZGIryxLLU1p5NeTeKK8RQzZJBUd6+9pIyYi3/od9clS0/0W3wXHlI29Yh9pC1TpQGBDixlGeg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script> -->
@@ -22,8 +24,7 @@
         <a href="#" target="blank" id="comprar" >Comprar</a>
         <a href="#">Facebook</a>
         <a href="#">Instagram</a>
-		<button id="botonPrueba">Test</button>
-		<button id="botonPruebaJquery" type="button" style="color: red; height: 10px;">jquery</button>
+		<!-- <button id="botonPrueba">Test</button> -->
     </nav>
     <hr>
 		<div id="todo" class="todoNo">
@@ -42,13 +43,13 @@
 <!-- 
 			<p>Primer parrafo</p>
 			<p class="intro" >Segundo parrafo</p> -->
-			<input type="text" name="" id="inputKeyUp">
+			<!-- <input type="text" name="" id="inputKeyUp">
 
 			<p id="test">This is some <b>bold</b> text in a paragraph.</p>
 			<p>Name: <input type="text" id="test2" value="Mickey Mouse"></p>
 
 			<label for="propCheck">Tilde</label>
-			<input type="checkbox" name="propCheck" id="propCheck">
+			<input type="checkbox" name="propCheck" id="propCheck"> -->
 
             <!--Botones de compra-->
             <div id="divbotones" class="ocultarBotones">
@@ -57,6 +58,7 @@
                 <button class="buttonCarrito buttonNo" type="button" id="botonDatos" onclick="pideDatos()" disabled="disabled">Datos personales</button>
                 <button class="buttonCarrito buttonNo" type="button" id="botonPago" onclick="validaDatosPersonales()" disabled="disabled">Pago</button>
                 <button class="buttonCarrito buttonNo" type="button" id="botonConfirmar" onclick="validaDatosPago()" disabled="disabled">Confirmar pedido</button>
+				<button class="buttonCarrito" onclick="buscarProductos()" > Buscar productos </button>
             </div>
 
             <!--zona de compra, tablas, formularios, etc.-->
@@ -224,4 +226,15 @@
         </div>
 </body>
 </html>
+<script>
 
+	$('#botonPrueba').click(()=>{
+		$.toast({
+    heading: 'Information',
+    text: 'Now you can add icons to generate different kinds of toasts',
+    showHideTransition: 'slide',
+    icon: 'info'
+})
+	});
+
+</script>

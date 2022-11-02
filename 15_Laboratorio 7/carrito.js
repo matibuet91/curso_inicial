@@ -67,7 +67,6 @@ function validaLasUnidades(){
         }
     }    
 }
-
 function calculaElTotal(){
     //Añade el encabezado de la tabla
     document.getElementById("tablaTotal").innerHTML = '<tr><td class="pro"><b>Producto</b></td><td class="uni"><b>Unidades</b></td><td class="preUni"><b>Precio Unidad</b></td><td class="preTotal"><b>Precio Total</b></td></tr>';
@@ -505,8 +504,8 @@ document.addEventListener('DOMContentLoaded', function () {
 
     fechaNacimientoAnio(anio);
 
-    console.log('jQuery', $('#fechaNacimientoDia').html());
-    console.log('JS',document.getElementById('fechaNacimientoDia').innerHTML);
+    // console.log('jQuery', $('#fechaNacimientoDia').html());
+    // console.log('JS',document.getElementById('fechaNacimientoDia').innerHTML);
 
     for (let i = 1; i <= 31; i++) {
         $('#fechaNacimientoDia').html( $('#fechaNacimientoDia').html() + '<option value="' + i + '">' + i + '</option>');
@@ -529,16 +528,355 @@ document.addEventListener('DOMContentLoaded', function () {
 
 })
 
+
+
+
+function buscarProductos(){
+    var xhr = new XMLHttpRequest()
+    //configurada la llamada ajax con la url de productos
+    xhr.open("GET","https://run.mocky.io/v3/af7220c5-c0dc-45c2-afa0-295aa958d012");
+    xhr.send();
+
+    xhr.addEventListener("load",function(){        
+        if (xhr.status == 200) {
+            console.log('Productos:', xhr.response);
+        }
+        else if (xhr.status == 201) {
+            console.log('Productos:', xhr.response);
+        }
+        else{
+
+        }
+    })
+}
+
+function traerMeses(){
+    var xhr = new XMLHttpRequest()
+    //configurada la llamada ajax con la url de meses
+    // xhr.open("GET","https://run.mocky.io/v3/aae68136-bfc4-4411-b8b1-fa06a413def5");
+
+    //esta es una llamada que da error
+    xhr.open("GET","https://run.mocky.io/v3/bf6dd6e2-672c-4094-95fc-9b2021314c98");
+    xhr.send()
+
+    xhr.addEventListener("load",function(){
+        if (xhr.status == 200) {
+            console.log('Meses:', xhr.response);
+        }
+        else{            
+            console.log(xhr.response)
+        }
+    })
+    
+}
+
+function traerDatos(){
+    var llamada = 
+    $.get("https://www.charlesbabbage.edu.ar/course/view.php?id=7",
+    {
+        status:"inactive",
+        gender:"male",
+        id:379
+    }
+    ).done(
+        function(resp){
+            console.log('todo ok', resp)
+            resp.forEach(element => {
+                console.log('Este es el mes:', element.mes)
+            });            
+        }
+    ).fail(
+        function(err){
+            console.log('mensaje: ', err.responseJSON.mesagge)
+            console.log('el status fue de: ', err.status)
+            alert(err.responseJSON.mesagge)
+        }
+    )    
+}
+
+function traerDatosAjaxGet(){
+    let name = 'Carlos'
+    $.ajax(
+        {
+            url: "https://gorest.co.in/public/v2/users?name=" + name,
+            method:'GET',
+            headers: {'Authorization': 'Bearer 95451378e16db59d76be37069523fb715e46f5853e9968340a5e1a2ef164da2b'}
+        }
+    ).done(
+        function(resp){
+            console.log('todo ok', resp)
+            resp.forEach(element => {
+                console.log('Este es el mes:', element.mes)
+            });            
+        }
+    ).fail(
+        function(err){
+            console.log('mensaje: ', err.responseJSON.mesagge)
+            console.log('el status fue de: ', err.status)
+            alert(err.responseJSON.mesagge)
+        }
+    ).always(function( xhr, status ) {
+        alert( "The request is complete!" );
+    });    
+}
+
+function crearUsuarioAjax(){
+    $.ajax(
+        {
+            url: "https://gorest.co.in/public/v2/users",
+            method:'POST',
+            data: {
+                name: "Juan Carlos",
+                email: "juan_carlos@gmail.com",
+                gender: "male",
+                status: "inactive"
+            },
+            headers: {'Authorization': 'Bearer 95451378e16db59d76be37069523fb715e46f5853e9968340a5e1a2ef164da2b'},
+            contentType: "application/json"
+        }
+    ).done(
+        function(resp){
+            console.log('todo ok', resp)       
+        }
+    ).fail(
+        function(err){
+            console.log('mensaje: ', err.responseJSON.mesagge)
+            console.log('el status fue de: ', err.status)
+            alert(err.responseJSON.mesagge)
+        }
+    ).always(function( xhr, status ) {
+        alert( "La llamada se ejecuto correctamete!" );
+    });    
+}
+
+function actualizarUsuarioAjax(){
+    $.ajax(
+        {
+            url: "https://gorest.co.in/public/v2/users/2555",
+            method:'PUT',
+            data: {
+                name: "Juan Carlos",
+                email: "juan_carlos@gmail.com",
+                gender: "male",
+                status: "inactive"
+            },
+            headers: {'Authorization': 'Bearer 95451378e16db59d76be37069523fb715e46f5853e9968340a5e1a2ef164da2b'}
+        }
+    ).done(
+        function(resp){
+            console.log('todo ok', resp)       
+        }
+    ).fail(
+        function(err){
+            console.log('mensaje: ', err.responseJSON.mesagge)
+            console.log('el status fue de: ', err.status)
+            alert(err.responseJSON.mesagge)
+        }
+    ).always(function( xhr, status ) {
+        alert( "La llamada se ejecuto correctamete!" );
+    });    
+}
+
+function deleteUsuarioAjax(){
+    $.ajax(
+        {
+            url: "https://gorest.co.in/public/v2/users/2562",
+            method:'DELETE',
+            headers: {'Authorization': 'Bearer 95451378e16db59d76be37069523fb715e46f5853e9968340a5e1a2ef164da2b'}
+        }
+    ).done(
+        function(resp){
+            console.log('todo ok', resp)       
+        }
+    ).fail(
+        function(err){
+            console.log('mensaje: ', err.responseJSON.mesagge)
+            console.log('el status fue de: ', err.status)
+            alert(err.responseJSON.mesagge)
+        }
+    ).always(function( xhr, status ) {
+        alert( "La llamada se ejecuto correctamete!" );
+    });    
+}
+
+function mensajeHola(){
+    console.log("Hola Mundo con retraso!");
+}
+
+function llamadaEnCola(){
+    var xhr = new XMLHttpRequest()
+    xhr.open("get","https://jsonplaceholder.typicode.com/users")
+    xhr.addEventListener("load",function(){
+        if (xhr.status == 200) {
+            var usuarios = JSON.parse(xhr.response) //Parseamos el string que nos devuelve la API primero
+            var xhr_posts = new XMLHttpRequest()
+            xhr_posts.open("get","https://jsonplaceholder.typicode.com/posts?userId="+usuarios[0].id)
+            xhr_posts.addEventListener("load",function(){
+                if (xhr_posts.status == 200) {
+                    var posts = JSON.parse(xhr_posts.response)
+                    var xhr_comment = new XMLHttpRequest()
+                    xhr_comment.open("get", "https://jsonplaceholder.typicode.com/comments?postId="+posts[0].id)
+                    xhr_comment.addEventListener("load",function(){
+                        if (xhr_comment.status == 200) {
+                            /*Piramid of DOOM*/ var comments = JSON.parse(xhr_comment.response)
+                            console.log(comments)
+                        }
+                    })
+                    xhr_comment.send()
+                }
+            })
+            xhr_posts.send()
+        }
+    })
+    xhr.send();
+}
+
+function getUsuarios(){
+    let miPrimeraPromise = 
+    
+    new Promise((resolve, reject) => {
+        $.get('https://jsonplaceholder.typicode.com/users').done( function(resp) {
+            resolve(resp);
+        }).fail ( function() {
+            reject('Ocurrio un error')
+        })
+    });
+
+    miPrimeraPromise
+    .then(function (val){
+        // console.log('Lista usuarios:', val);
+        val.forEach(element => {
+            getPosts(element.id)
+        });
+        // getPosts(val[0].id)
+    }).catch (function (error){
+        console.log('mensaje error', error);
+    })
+}
+
+function getPosts(idUsuario){
+    let resp =  new Promise((resolve, reject) => {
+        $.get('https://jsonplaceholder.typicode.com/posts',
+        {
+            userId: idUsuario
+        }
+        ).done( function(resp) {
+            resolve(resp);
+        }).fail ( function() {
+            reject('Ocurrio un error')
+        })
+    });
+
+    resp.then(function(resp) {
+        // console.log('Lista de Posts', resp);
+        resp.forEach(element => {
+            getComentarios(element.id);
+        });
+        // getComentarios(resp[4].id);
+    })
+}
+
+function getComentarios(idPost){
+    let resp =  new Promise((resolve, reject) => {
+        $.get('https://jsonplaceholder.typicode.com/comments',
+        {
+            postId: idPost
+        }
+        ).done( function(resp) {
+            resolve(resp);
+        }).fail ( function() {
+            reject('Ocurrio un error')
+        })
+    });
+
+    resp.then(function(val) {
+        // console.log('Lista de comentarios', val);
+
+        // for (let index = 0; index < 1000; index++) {
+        //     console.log('contador',index);        
+        // }
+    })
+}
+
 $(document).ready(function(){
+
+    // traerDatosAjaxGet();
+
+    // var nombre = sessionStorage.getItem('Datos');
+    // console.log('mis datos: ', JSON.parse( nombre));
+
+    getUsuarios();
+
+    // var myObj = {
+    //     name:'Algo',
+    //     especie: 'otro'
+    // };
+
+
+    // myObj.name = ''
+
+    // setTimeout( function() { 
+    //     mensajeHola()
+    // },  0);
+    // console.log("Sorpresa!");
+    
+
+    // let datosString = JSON.stringify(
+    //    [ 
+    //     {
+    //         name: "Juan Carlos",
+    //         email: "juan_carlos@gmail.com",
+    //         gender: "male",
+    //         status: "inactive"
+    //     },
+    //     {
+    //         name: "Juan Carlos 2",
+    //         email: "juan_carlos@gmail.com",
+    //         gender: "male",
+    //         status: "inactive"
+    //     }
+    //     ]
+    // )
+
+    // console.log( 'Objeto convertido a string', datosString);
+
+    // let datosObjeto = {
+    //     name: "Juan Carlos",
+    //     email: "juan_carlos@gmail.com",
+    //     gender: "male",
+    //     status: "inactive"
+    // }
+    // console.log( 'Objeto', datosObjeto.name);
+
+    // traerDatos();
+
+    // buscarProductos();
+    // traerMeses();
+
+    // xhr.addEventListener("readystatechange",function(){
+    //     console.log('ReadyState:', xhr.readyState)
+    // })
+
+    // traerMesesjQuery('Matias');
+    // traerDatosAjaxGet();
+
+    // crearUsuarioAjax();
+    // traerDatosAjaxGet();
+
+    // actualizarUsuarioAjax();
+
+    // deleteUsuarioAjax();
+
+    // traerDatos();
 
     // alert("HTML: " + $("#test").html());
     // alert("Text: " + $("#test").text());
     // alert("Value: " + $("#test2").val());
 
-    $('#propCheck').click(function(){
-        console.log($(this).val());
-        console.log($(this).prop('checked'));
-    });
+    // $('#propCheck').click(function(){
+    //     console.log($(this).val());
+    //     console.log($(this).prop('checked'));
+    // });
 
     // //código jQuery adicional
     // console.log('Cargo correctamente');
